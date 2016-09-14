@@ -94,18 +94,18 @@ End:  HIDDEN AND VISIBLE UTILITIES
   @include resp-min(lg){
     width: $container;
     &-default{
-      width: 1133px;
+      width: 1200px;
     }
     &-small{
       width: $container-small; 
     }
     &-smaller{
-      width: 970px;
+      width: 1000px;
     }
   }
 }
 %padding-block{
-  padding-top: 38px;
+  padding-top: 41px;
   padding-bottom: 50px; 
 }
 .vsection{

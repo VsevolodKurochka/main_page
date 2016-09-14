@@ -31,19 +31,17 @@
 				margin-bottom: 0;
 			}
 		}
-	}
-	// @include resp-max(md){
-	// 	padding-top: 40px;
-	// }
-	&-margin{
-		margin-top: 30px;
-	}
+	}	
 	@include resp-min(md){
 		min-height: 1073px;
+		&-logo{
+		  position: relative;
+		  left: -32px;
+		  top: 3px;
+		}
 		&-margin{
 			margin-top: 44px;
-		}
-		
+		}		
 	}
 	@include resp-min(lg){
 		&-text{
@@ -56,5 +54,8 @@
 		&-logo{
 			margin-bottom: 15px;
 		}
+	}
+	&-margin{
+		margin-top: 30px;
 	}
 }

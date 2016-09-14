@@ -1,0 +1,204 @@
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+    max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+.main-form{
+  width: 100%;
+  @include resp-min(sm){
+    width: 300px;
+  }
+  @extend .center-block;
+  input{
+    border: 1px solid #eeeeee;
+    @include borderR(5px);
+    @extend .block-inline;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(253, 188, 48, 0.17);
+    @extend .regular;
+    @extend .transition;
+    &:focus{
+      border-color: setColor(corp);
+    }
+  }
+  .btn{
+    width: 100%;
+  }
+}
+.border{
+  &-block{
+    border-style: solid;
+    border-color: setColor(black, dark);
+    border-width: 10px;
+    padding: 30px;
+    &-margin{
+      padding: 20px 15px;
+      background-color: #fff;
+      margin-bottom: 10px;
+    }
+    @include resp-min(sm){
+      &-margin{
+        margin-bottom: 21px;
+      }
+    }
+    @include resp-min(lg){
+      border-width: 20px;
+      padding: 38px 30px 74px 60px;
+      &.big{
+        .border-block-margin{
+          margin-left: -144px;
+        }
+      }
+      &-margin{
+        padding: 5px 0 10px 0;
+        margin-left: -163px;
+      }
+    }
+    @include resp-max(lg){
+      padding-right: 15px;
+      padding-left: 15px;
+      &-margin{
+        margin-left: -30px;
+      }
+    }
+    &-btn{
+      &-sm{
+        margin-top: 31px;
+      }
+      &-bm{
+        margin-top: 58px;
+      }
+    }
+  }
+  &-left{
+    @extend .relative;
+    min-height: 65px;
+    padding-left: 19px;
+    padding-right: 25px;
+    font-size: 20px;
+    &:after{
+      @extend .pseudo;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 65px;
+      background-color: setColor(corp);
+    }
+    @include resp-min(md){
+      display: inline-block;
+      vertical-align: top;
+      font-size: 20px;
+      line-height: 25px;
+      p{
+        max-width: 220px;
+      }
+    }
+    @include resp-max(md){
+      @include resp-min(sm){
+        margin-bottom: 30px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        font-size: 30px;
+        p{
+          max-width: 545px;
+        }
+      }
+    }
+    @include resp-max(sm){
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.bg{
+  &-grey{
+    background-color: #e2e2e2;
+    .border-block-margin{
+      background-color: #e2e2e2;
+    }
+  }
+}
+.grayscale{
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  &.disabled{
+    filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+    -webkit-filter: grayscale(0%);    
+  }
+}
+.company{
+  &-wrap{
+    margin-top: 30px;
+    @include resp-min(sm){
+      margin-top: 73px;
+    }
+  }
+  &-block{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 23px;
+    @include resp-max(sm){
+      width: 100%;
+    }
+    img{
+      @extend .transition;
+      @extend .grayscale;
+      &:hover{
+        @extend .grayscale.disabled;
+      }
+    }
+  }
+}
+.big-man{
+  position: absolute;
+  right: -32px;
+  bottom: -32px;
+  @include resp-max(lg){
+    @include resp-min(sm){
+      right: -140px;
+      bottom: -350px;
+    }
+  }
+  @include resp-max(sm){
+    bottom: -380px;
+    width: 370px;
+    left: -114px;
+    transform: scale(-1,1);
+  }
+}
+.notebook{
+  &-img{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+  }
+  @include resp-min(md){
+    padding-bottom: 305px;
+  }
+  @include resp-min(lg){
+    &-img{
+      width: 1201px;
+      height: 351px;
+      margin-left: -600px;
+      bottom: -305px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.btn {
+  border: none;
+  max-width: 100%;
+  padding: 10px 20px;
+  overflow: hidden;
+  z-index: 1;
+  font-size: 16px;
+  @include borderR(3px);
+  @extend .relative;
+  @extend .block-inline;
+  @extend .tdn;
+  @extend .bold;
+  @extend .transition;
+  @include resp-min(xs){
+    padding: 14px 28.5px;
+  }
+  &-effect{
+    &:before{
+      @extend .pseudo;
+      @extend .transition;
+    }
+    &-1{
+      @extend .btn-effect;
+      &:before{
+        z-index: -1;
+        width: 100%;
+        height: 0;
+        top: 50%;
+        left: 50%; 
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+      }
+      &:hover{
+        &:before{
+          height: calc(450% - 40px);
+          opacity: 1;
+        }
+      }   
+    } 
+  }
+  &-corp{
+    background-color: transparent;
+    border: 5px solid setColor(corp);
+  }
+  &-single{
+    @include resp-min(sm){
+      margin-top: 70px;
+    }
+    @include resp-max(sm){
+      margin-top: 35px;
+    }
+  }
+}

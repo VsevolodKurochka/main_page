@@ -1,0 +1,60 @@
+//SETTING FOR DEFAULT FONT
+	$defaultFont: (
+		color: #000,
+		font-family: pfdindisplaypro-thin,
+		font-size: 16px,
+		line-height: 1.42857143
+	);
+	
+$colors: (
+	black: (
+		base 	: #000,
+		light : #b7b7b7,
+		dark	: #f5f5f5,
+		darker : #252525
+	),
+	green: (
+		base 	: #5bb85d
+	),
+ 	corp: (
+		base	: #ffbd0d,
+		light : #ffaa54
+ 	),
+ 	light: (
+		base  : #fff
+ 	)
+);
+
+$sizes: (
+	text_smaller    : 12px,
+	text_small      : 14px,
+	text_default    : 18px
+);
+
+
+
+$breakpoints: (
+  lg:   1275px,
+  md:   1025px,
+  sm:   768px,
+  xs:   480px,
+  exs:  320px
+);
+
+$grid-system: (
+	columns 							: 12,
+	width 								: 100%,
+	gutter 								: 15px,
+	containerWidth 				: 1240px,
+	containerSmallWidth 	: 1170px,
+	menuExists            : true,
+	menuDirection 				: left,
+	menuViewBreakpoint    : map-get($breakpoints, md)
+);
+
+$columns         		: map-get($grid-system, columns);
+$width           		: map-get($grid-system, width);
+$gutter          		: map-get($grid-system, gutter);
+$container       		: map-get($grid-system, containerWidth);
+$container-small 		: map-get($grid-system, containerSmallWidth);
+$menuDirection    	: map-get($grid-system, menuDirection);

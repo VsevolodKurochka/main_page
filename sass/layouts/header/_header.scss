@@ -1,0 +1,60 @@
+.header {
+	@extend .cf;
+	padding: 25px 0 80px;
+	overflow: hidden;
+	@include resp-max(md){
+		padding-top: 50px;
+	}
+	&-text{
+		@extend .thin;
+		@extend .block-inline;
+		@extend .relative;
+		&:after{
+			@extend .pseudo;
+			@include bg("../img/phone.png");
+			width: 12px;
+			height: 20px;
+			left: -20px;
+			top: 50%;
+			margin-top: -10px;
+		}
+		p{
+			margin-bottom: 10px;
+			text-align: right;
+			span{
+			  text-align: left;
+			  display: inline-block;
+			  width: 50px;
+			  color: setColor(black, light);
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	// @include resp-max(md){
+	// 	padding-top: 40px;
+	// }
+	&-margin{
+		margin-top: 30px;
+	}
+	@include resp-min(md){
+		min-height: 1073px;
+		&-margin{
+			margin-top: 44px;
+		}
+		
+	}
+	@include resp-min(lg){
+		&-text{
+			position: relative;
+		  top: -7px;
+		  right: -15px;
+		}
+	}
+	@include resp-max(md){
+		&-logo{
+			margin-bottom: 15px;
+		}
+	}
+}

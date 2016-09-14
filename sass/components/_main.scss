@@ -1,0 +1,46 @@
+.body{
+  @each $property, $value in $defaultFont{
+    #{$property}: #{$value};
+  }
+  
+  @include resp-min(menuViewBreakpoint, $grid-system){
+    -webkit-user-select: all !important;  /* Chrome 49+ */
+    -moz-user-select: all !important;     /* Firefox 43+ */
+    -ms-user-select: all !important;      /* No support yet */
+    //user-select: all !important;          /* Likely future */ 
+  }
+  @include resp-max(menuViewBreakpoint, $grid-system){
+    left: 0;
+    position: relative;
+    overflow-x: hidden;
+    transition: all ease .5s;
+  }
+}
+img{
+  @extend .block-inline;
+  max-width: 100%;
+}
+input{
+  &:focus{
+    &::-webkit-input-placeholder{
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+a,button{
+  cursor: pointer;
+}
+@for $i from 1 through 3{
+  .z-index-#{$i}{
+    z-index: $i;
+  }
+}

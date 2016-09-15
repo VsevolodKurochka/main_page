@@ -43,6 +43,10 @@
     background-color: transparent;
     border: 5px solid setColor(corp);
   }
+  &-toggler{
+    min-width: 165px;
+    outline: none;
+  }
   &-single{
     @include resp-min(sm){
       margin-top: 59px;

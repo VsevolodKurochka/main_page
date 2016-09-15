@@ -100,4 +100,37 @@ $(document).ready(function(){
 		$('[close-video="video"]').click(function(){
 			closeVideo();
 		});
+
+		//FOOTER
+		function changeName(btnName, btnHasClass, btnRemovedClass){
+			btnName.toggleClass("open");
+			if( btnName.hasClass("open") ) {
+				btnName.text(btnHasClass);
+			}else{
+				btnName.text(btnRemovedClass);
+			}
+		}
+		$("#showFooterMenu").click(function(){
+			$("#footerMenu").slideToggle("slow");
+			changeName($(this),"Скрыть меню", "Показать меню");
+		});
+		$("#showAbout").click(function(){
+			$(".about-wrap").toggleClass("about-visible-blocks");
+			changeName($(this),"Скрыть", "Показать еще");
+			$("body,html").animate({
+				scrollTop: $("#aboutUsWriting").offset().top
+			}, 2000);
+			return false;
+		});
+		$('.events-carousel').owlCarousel({
+		    loop: true,
+		    margin: 10,
+		    nav: true,
+		    navText: ["", ""],
+		    responsive:{
+		        0:{
+		            items:1
+		        }
+		    }
+		});
 });	

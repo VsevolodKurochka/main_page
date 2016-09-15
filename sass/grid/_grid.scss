@@ -3,10 +3,10 @@ Start: COLUMNS
 ======================== */
 @include make-column(xs,"not-push","not-pull","not-offset");
 @include resp-min(sm){
-  @include make-column(sm,"not-push","not-pull","not-offset");
+  @include make-column(sm,"not-push","not-pull","offset");
 }
 @include resp-min(md){
-  @include make-column(md,"not-push","not-pull","not-offset");
+  @include make-column(md,"not-push","not-pull","offset");
 }
 @include resp-min(lg){
   @include make-column(lg,"not-push","not-pull","not-offset");

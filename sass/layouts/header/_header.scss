@@ -6,7 +6,6 @@
 		padding-top: 50px;
 	}
 	&-text{
-		@extend .thin;
 		@extend .block-inline;
 		@extend .relative;
 		&:after{
@@ -18,19 +17,7 @@
 			top: 50%;
 			margin-top: -10px;
 		}
-		p{
-			margin-bottom: 10px;
-			text-align: right;
-			span{
-			  text-align: left;
-			  display: inline-block;
-			  width: 50px;
-			  color: setColor(black, light);
-			}
-			&:last-child{
-				margin-bottom: 0;
-			}
-		}
+		
 	}	
 	@include resp-min(md){
 		min-height: 1073px;

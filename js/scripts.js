@@ -41,6 +41,7 @@ $(document).ready(function(){
 			menuSwipe();
 			$(window).resize(menuSwipe);
 			
+		
 		// $(document).click(function(e){
 		// 	if( header_menu.hasClass(header_menu_name + '-open') ) {
 		// 		if ( ! $(e.target).is('.'+header_menu_name + ', .'+header_menu_name+"*") ) {
@@ -57,35 +58,46 @@ $(document).ready(function(){
 			},2000);
 			return false;
 		});
-		
-		$('[data-modal="modal"]').click(function(){
-			var thisTarget = $(this).attr("data-modal-target");
-			$(thisTarget).addClass(visibility);
-			body.append(backdrop).addClass("vmodal-open");
-			backdrop.addClass(visibility);
-		});
-		$('[data-close="modal"]').click(function(){
-			$(this).closest(".vmodal").removeClass(visibility);
-			backdrop.removeClass(visibility);
-			body.removeClass("vmodal-open");
-		});
-		$(window).click(function(e){
-			if ( backdrop.length > 0 ) {
-				if ( $(e.target).is(".vmodal") ) {
-					$(".vmodal.in").removeClass(visibility);
-					backdrop.removeClass(visibility);
-					body.removeClass("vmodal-open");
-					console.log("document clicked");
+
+		function closeVideo(){
+			$("#modal_video .vmodal-video").html("");
+		}
+		//MODAL
+			$('[data-modal="modal"]').click(function(){
+				var thisTarget = $(this).attr("data-modal-target");
+				$(thisTarget).addClass(visibility);
+				body.append(backdrop).addClass("vmodal-open");
+				backdrop.addClass(visibility);
+			});
+			$('[data-close="modal"]').click(function(){
+				$(this).closest(".vmodal").removeClass(visibility);
+				backdrop.removeClass(visibility);
+				body.removeClass("vmodal-open");
+			});
+			$(window).click(function(e){
+				if ( backdrop.length > 0 ) {
+					if ( $(e.target).is(".vmodal") ) {
+						$(".vmodal.in").removeClass(visibility);
+						backdrop.removeClass(visibility);
+						body.removeClass("vmodal-open");
+						closeVideo();
+					}
 				}
-			}
-		});
-		// backdrop.click(function(){
-		// 	$(".vmodal.in").removeClass(visibility);
-		// 	backdrop.removeClass(visibility);
-		// 	console.log("backdrop clicked");
-		// });
+			});
 		
-		// $(".vmodal").click(function(){
-		// 	console.log("vmodal clicked");
-		// });
+		//VIDEO
+		$('[data-video="video"]').click(function(){
+			var videoSrc = $(this).attr('data-video-src');
+			var iframe = $("<iframe />", {
+				width: "100%",
+				height: "315",
+				src: videoSrc + "?autoplay=1",
+				frameborder: "",
+				allowfullscreen: "allowfullscreen"
+			});
+			$("#modal_video .vmodal-video").append(iframe);
+		});
+		$('[close-video="video"]').click(function(){
+			closeVideo();
+		});
 });	

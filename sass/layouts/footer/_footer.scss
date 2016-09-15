@@ -1,19 +1,142 @@
 /* ===================== 
 Start: START FOOTER      
 ======================== */
+%activity-link{
+	&:after{
+			background-color: setColor(corp);	
+	}
+}
 .footer{
 	@extend .cf;
-	padding: 10px 15px;
-	background-color: #131313;
-	@extend .text-center;
+	padding: 57px 15px;
+	background-color: #363636;
+	color: setColor(black, lighter);
 	&-b{
-		@extend .block-inline;
-		vertical-align: middle;
-		margin: 0 15px;
+
 	}
-	a{
-		@extend .tdn;
-		@extend .light !optional;
+	&-menu{
+		
+		a{
+			color: inherit;
+			text-decoration: none;
+			@extend .block-inline;
+			@extend .relative;
+			@extend .transition;
+			
+			
+			&:after{
+				@extend .transition;
+				@extend .pseudo;
+				left: 0;
+				bottom: 3px;
+				width: 100%;
+				height: 1px;
+				background-color: setColor(black, lighter);
+			}
+			&:hover{
+				color: setColor(corp);
+				@extend %activity-link;
+			}
+		}
+		li{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&.active{
+				a{
+					color: setColor(corp);
+					@extend %activity-link;
+				}
+			}
+		}
+	}
+	&-inf{
+		@include resp-min(sm){
+			float: right;
+			width: 170px;
+		}
+	}
+	&-phone{
+		@include resp-min(sm){
+			margin-bottom: 83px;
+		}
+		p{
+			text-align: left;
+			margin-bottom: 15px;
+		}
+		span{
+			color: #a1a1a1;
+		}	
+	}
+	&-share{
+		&-title{
+			margin-bottom: 14px;
+		}
+		&-b{
+			@extend .block-inline;
+			margin-right: 16px;
+			width: 40px;
+			height: 40px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				@extend .block-inline;
+				@extend .relative;
+				@extend .transition;
+				width: 100%;
+				height: 100%;
+				background-color: #464646;
+				&:hover{
+					background-color: #005b8f;
+				}
+				&:after{
+					@extend .pseudo;
+					left: 50%;
+					top: 50%;
+				}
+				&.fb{
+					&:after{
+						width: 10px;
+						height: 20px;
+						margin-left: -5px;
+						margin-top: -10px;
+						@include bg("../img/fb.png");
+					}
+				}
+				&.yt{
+					&:after{
+						width: 16px;
+						height: 20px;
+						margin-left: -8px;
+						margin-top: -10px;
+						@include bg("../img/yt.png");
+					}
+				}
+				&.vk{
+					&:after{
+						width: 20px;
+						height: 11px;
+						margin-left: -10px;
+						margin-top: -5.5px;
+						@include bg("../img/vk.png");
+					}
+				}
+			}
+		}
+	}
+	&-form{
+		margin-top: 10px;
+	}
+}
+
+.copyright{
+	opacity: 0.5;
+	margin-top: 30px;
+	@include resp-min(sm){
+  	margin-top: 50px;
+  	line-height: 20px;
 	}
 }
 /* =====================

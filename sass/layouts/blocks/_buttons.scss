@@ -5,7 +5,8 @@
   overflow: hidden;
   z-index: 1;
   font-size: 16px;
-  @include borderR(3px);
+  color: inherit;
+  @include borderR(0px);
   @extend .relative;
   @extend .block-inline;
   @extend .tdn;
@@ -44,7 +45,7 @@
   }
   &-single{
     @include resp-min(sm){
-      margin-top: 70px;
+      margin-top: 59px;
     }
     @include resp-max(sm){
       margin-top: 35px;

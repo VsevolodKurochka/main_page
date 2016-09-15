@@ -42,6 +42,9 @@
   &-corp{
     background-color: transparent;
     border: 5px solid setColor(corp);
+    &:before{
+      background-color: setColor(corp);
+    }
   }
   &-toggler{
     min-width: 165px;

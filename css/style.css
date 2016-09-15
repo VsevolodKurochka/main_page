@@ -1204,6 +1204,9 @@ End:  HEADER
   background-color: transparent;
   border: 5px solid #ffbd0d;
 }
+.btn-corp:before {
+  background-color: #ffbd0d;
+}
 .btn-toggler {
   min-width: 165px;
   outline: none;
@@ -1345,7 +1348,7 @@ End:  HEADER
     padding: 38px 30px 74px 60px;
   }
   .border-block.big .border-block-margin {
-    margin-left: -144px;
+    margin-left: -110px;
   }
   .border-block-margin {
     padding: 5px 0 10px 0;
@@ -1353,6 +1356,11 @@ End:  HEADER
   }
   .border-block-margin.small-m {
     margin-left: -60px;
+  }
+}
+@media (min-width: 1400px) {
+  .border-block.big .border-block-margin {
+    margin-left: -144px;
   }
 }
 @media (max-width: 1274px) {
@@ -1959,8 +1967,12 @@ End:  HEADER
 @media (min-width: 768px) {
   .events-carousel-wrap {
     position: absolute;
+    top: 0;
     right: 15px;
     width: 375px;
+  }
+  .events-carousel-wrap img {
+    max-height: 250px;
   }
 }
 @media (min-width: 1025px) {
@@ -1970,13 +1982,21 @@ End:  HEADER
   .events-carousel-wrap {
     width: 542px;
   }
+  .events-carousel-wrap img {
+    max-height: 362px;
+  }
 }
 @media (min-width: 1275px) {
   .events-border {
     height: 535px;
   }
   .events-carousel-wrap {
+    height: 495px;
+    width: 742px;
     right: -60px;
+  }
+  .events-carousel-wrap img {
+    max-height: 495px;
   }
 }
 
@@ -2350,7 +2370,11 @@ Start: START FOOTER
 }
 .footer-form-title {
   margin-bottom: 14px;
-  margin-right: -15px;
+}
+@media (min-width: 1275px) {
+  .footer-form-title {
+    margin-right: -15px;
+  }
 }
 @media (min-width: 768px) {
   .footer-form .btn {

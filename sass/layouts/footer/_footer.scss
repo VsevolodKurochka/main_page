@@ -153,7 +153,9 @@ Start: START FOOTER
 		//margin-top: 42px;
 		&-title{
 			margin-bottom: 14px;
-			margin-right: -15px;
+			@include resp-min(lg){
+				margin-right: -15px;
+			}
 		}
 		
 		@include resp-min(sm){

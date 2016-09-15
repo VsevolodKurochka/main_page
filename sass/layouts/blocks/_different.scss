@@ -96,7 +96,7 @@
       padding: 38px 30px 74px 60px;
       &.big{
         .border-block-margin{
-          margin-left: -144px;
+          margin-left: -110px;
         }
       }
       
@@ -108,11 +108,13 @@
         }
       }
     }
-    // @media (min-width: 1400px){
-    //   &-margin{
-    //     margin-left: -163px;
-    //   }
-    // }
+    @media (min-width: 1400px){
+      &.big{
+        .border-block-margin{
+          margin-left: -144px;
+        }
+      }
+    }
     @include resp-max(lg){
       padding-right: 15px;
       padding-left: 15px;
@@ -751,8 +753,12 @@
     &-carousel{
       &-wrap{
         position: absolute;
+        top: 0;
         right: 15px;
         width: 375px;
+        img{
+          max-height: 250px;
+        }
       }
     }
   }
@@ -765,6 +771,9 @@
         
         width: 542px;
         //height: 280px;
+        img{
+          max-height: 362px;
+        }
       }
     }    
   }
@@ -774,7 +783,12 @@
     }
     &-carousel{
       &-wrap{
+        height: 495px;
+        width: 742px;
         right: -60px;
+        img{
+          max-height: 495px;
+        }
       }
     }
   }
